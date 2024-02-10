@@ -44,12 +44,12 @@
 #define BUTTON_PIN1 2
 #define BUTTON_PIN2 3
 #define BUTTON_PIN3 4
-#define BUTTON_PIN4 15
+#define BUTTON_PIN4 5
 #define BUTTON_PIN5 6
-#define BUTTON_PIN6 5
-#define BUTTON_PIN7 14
-#define BUTTON_PIN8 16
-#define BUTTON_PIN9 7 
+#define BUTTON_PIN6 7
+#define BUTTON_PIN7 8
+#define BUTTON_PIN8 9
+#define BUTTON_PIN9 10 
 
 // ---------------------------------
 
@@ -74,31 +74,31 @@ class button {
     lastPressed = millis();
     if (state) {
       if (pin == BUTTON_PIN1) {
-        Consumer.write(MEDIA_PREVIOUS);
+        Keyboard.write(KEY_1);
       }
       if (pin == BUTTON_PIN2) {
-        Consumer.write(MEDIA_REWIND);
+        Keyboard.write(KEY_2);
       }
       if (pin == BUTTON_PIN3) {
-        Consumer.write(MEDIA_FAST_FORWARD);
+        Keyboard.write(KEY_3);
       }
       if (pin == BUTTON_PIN4) {
-        Consumer.write(MEDIA_NEXT);
+        Keyboard.write(KEY_4);
       }
       if (pin == BUTTON_PIN5) {
-        Consumer.write(MEDIA_PLAY_PAUSE);
+        Keyboard.write(KEY_5);
       }
       if (pin == BUTTON_PIN6) {
-        Consumer.write(MEDIA_PLAY_PAUSE);
+        Keyboard.write(KEY_6);
       }
       if (pin == BUTTON_PIN7) {
-        Consumer.write(MEDIA_VOLUME_DOWN);
+        Keyboard.write(KEY_7);
       }
       if (pin == BUTTON_PIN8) {
-        Consumer.write(MEDIA_VOLUME_UP);
+        Keyboard.write(KEY_8);
       }
       if (pin == BUTTON_PIN9) {
-        Consumer.write(MEDIA_VOLUME_MUTE);
+        Keyboard.write(KEY_9);
       }
     }
     pressed = state;
@@ -113,8 +113,7 @@ class button {
   unsigned long lastPressed = 0;
   boolean pressed = 0;
 } ;
-A
-}
+
 
 void failsafe(){
   for(;;){} // Just going to hang out here for awhile :D
